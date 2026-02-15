@@ -11,32 +11,48 @@
 </head>
 
 <body>
-    <header>
-        <h1>Guess the Number!</h1>
-        <h2> Guess a number between 1 and 99 in seven attempts! </h2>
-    </header>
+    <main class="app">
+        <header class="intro">
+            <h1>Guess the Number</h1>
+            <p>Pick a number between 1 and 99. You get seven tries, so make them count!</p>
+        </header>
 
-    Guess:
-    <!--Makes a text box-->
-    <input id="userGuess" type="text" size="5">
+        <section class="scoreboard" aria-live="polite">
+            <div class="score" aria-label="Games won">
+                <p class="score-label">Wins</p>
+                <p class="score-value" id="winsCount">0</p>
+            </div>
+            <div class="score" aria-label="Games lost">
+                <p class="score-label">Losses</p>
+                <p class="score-value" id="lossesCount">0</p>
+            </div>
+            <div class="score" aria-label="Games played">
+                <p class="score-label">Games Played</p>
+                <p class="score-value" id="gamesPlayed">0</p>
+            </div>
+        </section>
 
-    <br>
+        <form id="guessForm" class="guess-form" autocomplete="off">
+            <label for="userGuess">Enter a whole number between 1 and 99.</label>
+            <div class="form-row">
+                <input id="userGuess" type="number" min="1" max="99" required placeholder="1 - 99">
+                <button id="guessButton" type="submit">Guess</button>
+                <button id="resetButton" type="button" class="hidden">Reset</button>
+            </div>
+            <p id="errorMessage" class="error" aria-live="assertive"></p>
+        </form>
 
-    <button id="guessInput"> Guess! </button>
-    
-    <br>
-    
-    <div id="guesses">
-        Previous Guesses:
+        <section class="messages" aria-live="polite">
+            <p id="statusMessage">Start by entering your first guess.</p>
+            <p id="hintMessage" class="hint"></p>
+            <p id="revealMessage" class="reveal"></p>
+        </section>
 
-    </div>
-    
-    <div id="isWin">
-
-
-    </div>
-
-   
+        <section class="history">
+            <h2>Previous Guesses (<span id="attemptCount">0</span>/7)</h2>
+            <ol id="guessList" aria-live="polite"></ol>
+        </section>
+    </main>
 </body>
 
 </html>

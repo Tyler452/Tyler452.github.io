@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab 3: Quiz</title>
+
+    <script src="js/script.js" defer> </script>
+    <link rel="stylesheet" href="style.css">
+
+    <script src="https://unpkg.com/underscore@1.13.7/underscore-umd-min.js"></script>
+
+</head>
+
+<body>
+    <h1>Quiz</h1>
+    <p>What is the capital of France?</p>
+    <div id="q1Choices"></div>
+    <hr>
+    <p>Which element has the chemical symbol 'O'?</p>
+    <label><input type="text" id="q2"> </label>
+    <hr>
+    <p>What is the largest mammal?</p>
+    <label><select id="q3">
+        <option value="blue_whale">Blue Whale</option>
+        <option value="elephant">Elephant</option>
+        <option value="giraffe">Giraffe</option>
+        <option value="hippopotamus">Hippopotamus</option>
+    </select>
+    </label>
+    <hr>
+    <p>how many people are there on Earth?</p>
+    <label><input type="number" id="q4"> </label>
+    <hr>
+    <p>Which planet is known as the Red Planet?</p>
+    <div id="q5Choices"></div>
+    <hr>
+
+    <button id="submitBtn">Submit Quiz</button>
+</body>
+
+</html>
