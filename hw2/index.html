@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Slot Machine</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Signika:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <header class="hero">
+        <h1>Weekend Slot Machine</h1>
+        <p>This version keeps things simple: add a bet, press spin, hope for a match.</p>
+    </header>
+    <main>
+        <section class="panel slot-panel" aria-live="polite">
+            <div class="bankroll">
+                <p class="label">Bankroll</p>
+                <p class="amount" id="bankroll">$150</p>
+            </div>
+
+            <form id="bet-form" class="bet-form">
+                <label for="bet-amount">Bet Amount ($5 minimum)</label>
+                <div class="form-row">
+                    <input type="number" id="bet-amount" name="bet-amount" min="5" step="5" placeholder="Enter bet" required>
+                    <button type="submit" id="spin-btn">Spin</button>
+                    <button type="button" id="reset-btn" class="ghost">Reset</button>
+                </div>
+            </form>
+
+            <div class="reels" role="group" aria-label="Slot machine reels">
+                <div class="reel">
+                    <img src="https://cdn.jsdelivr.net/gh/twitter/twemoji/assets/svg/1f3b0.svg" alt="Idle slot icon" data-default="https://cdn.jsdelivr.net/gh/twitter/twemoji/assets/svg/1f3b0.svg">
+                    <p class="symbol-name">---</p>
+                </div>
+                <div class="reel">
+                    <img src="https://cdn.jsdelivr.net/gh/twitter/twemoji/assets/svg/1f3b0.svg" alt="Idle slot icon" data-default="https://cdn.jsdelivr.net/gh/twitter/twemoji/assets/svg/1f3b0.svg">
+                    <p class="symbol-name">---</p>
+                </div>
+                <div class="reel">
+                    <img src="https://cdn.jsdelivr.net/gh/twitter/twemoji/assets/svg/1f3b0.svg" alt="Idle slot icon" data-default="https://cdn.jsdelivr.net/gh/twitter/twemoji/assets/svg/1f3b0.svg">
+                    <p class="symbol-name">---</p>
+                </div>
+            </div>
+
+            <div id="message-panel" class="status-panel" aria-live="assertive">
+                <h2>Status</h2>
+                <p id="result-text">Place a bet to spin the reels.</p>
+            </div>
+
+            <div class="history-panel">
+                <h3>Recent Spins</h3>
+                <ul id="history-list" aria-label="Recent slot outcomes">
+                    <li class="muted">No spins yet.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="panel info-panel">
+            <h2>Payout Table</h2>
+            <p>Match all three symbols to win the listed multiplier. Different symbols mean the bet is gone.</p>
+            <ul class="payouts">
+                <li><span>Lucky Seven</span><span>×10 bet</span></li>
+                <li><span>Emerald Clover</span><span>×6 bet</span></li>
+                <li><span>Cherry Burst</span><span>×4 bet</span></li>
+                <li><span>Bar Stack</span><span>×3 bet</span></li>
+            </ul>
+            <div class="tips">
+                <h3>Quick Notes</h3>
+                <ol>
+                    <li>Enter the amount you want to gamble.</li>
+                    <li>Press Spin and wait for the reels to land.</li>
+                    <li>If all three icons match, your bankroll grows.</li>
+                </ol>
+                <p class="note">Tip: use the reset button whenever you want to return to the starting cash.</p>
+            </div>
+        </section>
+    </main>
+</body>
+</html>
