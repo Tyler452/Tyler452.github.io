@@ -1,0 +1,155 @@
+:root {
+    --primary: #0f5cc0;
+    --dark: #0e2431;
+    --light: #f5f5f5;
+    --border: #d6d6d6;
+    --success: #2c7a3f;
+    --error: #b3261e;
+    --info: #555;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Segoe UI", Tahoma, sans-serif;
+    background: #fff;
+    color: var(--dark);
+    margin: 0;
+    padding: 0;
+}
+
+.page {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 30px 20px 60px;
+}
+
+h1 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+.subtitle {
+    margin-bottom: 1.5rem;
+    color: #4d4d4d;
+}
+
+.card {
+    background: var(--light);
+    border: 2px solid var(--border);
+    border-radius: 12px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.section {
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 18px;
+}
+
+.section h2 {
+    margin: 0 0 10px;
+    font-size: 1.25rem;
+}
+
+label {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-bottom: 12px;
+    font-weight: 600;
+}
+
+input,
+select {
+    padding: 10px;
+    border-radius: 6px;
+    border: 1px solid var(--border);
+    font-size: 1rem;
+}
+
+input:focus,
+select:focus {
+    outline: 2px solid var(--primary);
+    border-color: var(--primary);
+}
+
+.location-panel {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 8px;
+    margin: 10px 0 15px;
+}
+
+.location-panel p {
+    margin: 0;
+    padding: 8px;
+    background: var(--light);
+    border-radius: 6px;
+    border: 1px solid var(--border);
+}
+
+.status {
+    min-height: 1.25rem;
+    font-style: italic;
+    margin: -6px 0 10px;
+}
+
+.status-success {
+    color: var(--success);
+}
+
+.status-error {
+    color: var(--error);
+}
+
+.status-info {
+    color: var(--info);
+}
+
+.primary {
+    background: var(--primary);
+    color: #fff;
+    border: none;
+    font-size: 1.1rem;
+    padding: 12px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.primary:hover {
+    opacity: 0.9;
+}
+
+.primary:active {
+    transform: translateY(1px);
+}
+
+.form-alert {
+    min-height: 1.5rem;
+    font-weight: 600;
+}
+
+.alert-success {
+    color: var(--success);
+}
+
+.alert-danger {
+    color: var(--error);
+}
+
+@media (max-width: 600px) {
+    .card {
+        padding: 16px;
+    }
+
+    .section {
+        padding: 14px;
+    }
+}

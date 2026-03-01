@@ -4,36 +4,62 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Web APIs</title>
+    <title>Lab 4 Sign Up</title>
+    <link rel="stylesheet" href="style.css">
     <script src="js/script.js" defer></script>
 </head>
 
 <body>
-    <h1> Sign Up Form </h1>
+    <main class="page">
+        <h1>Sign Up Form</h1>
 
-    <fieldset>
-        <legend>Sign Up</legend>
-        First Name: <input type="text"><br>
-        Last Name: <input type="text"><br>
-        Email: <input type="text"><br>
-        Phone Number:<input type="text"><br><br>
-        Zip Code: <input type="text" id="zipCode"><br>
-        City: <span id="city"></span>
-        <br>
-        Latitude: <span id="lat"></span>
-        <br>
-        Longitude: <span id="long"></span>
-        <br><br>
-        State: <select id="state"></select><br>
-        Select a County: <select id="county"></select><br>
+        <form id="signupForm" class="card" novalidate>
+            <div class="section">
+                <h2>Location</h2>
+                <label>Zip Code
+                    <input type="text" id="zipInput" maxlength="5" inputmode="numeric">
+                </label>
+                <p class="status" id="zipMessage"></p>
+                <div class="location-panel">
+                    <p>City: <span id="cityDisplay">—</span></p>
+                    <p>Latitude: <span id="latDisplay">—</span></p>
+                    <p>Longitude: <span id="lonDisplay">—</span></p>
+                </div>
 
-        Desired Username: <input type="text" id="usernameId"><span id="usernameMessage"> </span><br>
-        Password: <input type="password" id="passwordId"><span id="passwordMessage"> </span><br>
-        Type Password Again: <input type="password"><br>
-        <input type="submit" value="Sign up!">
-    </fieldset>
+                <label>State
+                    <select id="stateSelect">
+                        <option value="" disabled selected>Loading states…</option>
+                    </select>
+                </label>
+                <label>County
+                    <select id="countySelect" disabled>
+                        <option value="">Select a state first</option>
+                    </select>
+                </label>
+            </div>
 
+            <div class="section">
+                <h2>Account</h2>
+                <label>Desired Username
+                    <input type="text" id="usernameInput" autocomplete="username">
+                </label>
+                <p class="status" id="usernameMessage"></p>
 
+                <label>Password
+                    <input type="password" id="passwordInput" autocomplete="new-password">
+                </label>
+                <p class="status" id="passwordSuggestion"></p>
+
+                <label>Retype Password
+                    <input type="password" id="confirmPasswordInput" autocomplete="new-password">
+                </label>
+                <p class="status" id="confirmMessage"></p>
+            </div>
+
+            <button type="submit" class="primary">Submit</button>
+            <p class="form-alert" id="formMessage"></p>
+        </form>
+    </main>
 </body>
 
 </html>
